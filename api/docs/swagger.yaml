@@ -14,7 +14,7 @@ info:
     url: "https://opendcim.org"
   license:
     name: "GPLv3"
-basePath: "/api/v1"
+basePath: "/dcim/api/v1"
 tags:
 - name: "openDCIM"
   description: "Everything about your Data Center Inventory."
