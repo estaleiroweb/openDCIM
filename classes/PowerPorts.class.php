@@ -38,7 +38,7 @@ class PowerPorts {
         $this->DeviceID = intval($this->DeviceID);
         $this->PortNumber = intval($this->PortNumber);
         $this->Label = sanitize($this->Label);
-        $this->ConnectorID = sanitizeNull($this->ConnectorID);
+        $this->ConnectorID = sanitize($this->ConnectorID);
         $this->PhaseID = sanitize($this->PhaseID);
         $this->VoltageID = sanitize($this->VoltageID);
         $this->ConnectedDeviceID = intval($this->ConnectedDeviceID);
