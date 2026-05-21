@@ -2,7 +2,7 @@
 
 /* Generic routines */
 
-function sanitize($string, $stripall = true, $filter = true) {
+function sanitize($string, $stripall = true, $filter = true, $null=false) {
     // Trim any leading or trailing whitespace
     $clean = trim("$string");
 
@@ -22,8 +22,12 @@ function sanitize($string, $stripall = true, $filter = true) {
 
     // There shoudln't be anything left to escape but wtf do it anyway
     $clean = addslashes($clean);
+    if($null && $clean == '') return 'NULL';
 
     return $clean;
+}
+function sanitizeNull($string, $stripall = true, $filter = true) {
+    return sanitize($string, $stripall, $filter, true);
 }
 
 function ArraySearchRecursive($Needle, $Haystack, $NeedleKey = "", $Strict = false, $Path = array()) {
