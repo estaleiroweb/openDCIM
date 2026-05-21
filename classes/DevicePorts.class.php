@@ -139,6 +139,7 @@ class DevicePorts {
 			$sql .= " ON DUPLICATE KEY UPDATE PortNumber=$this->PortNumber";
 		}
 
+			print ("<pre>SQL: $sql</pre>");
 		if(!$dbh->query($sql)){
 			$info=$dbh->errorInfo();
 
