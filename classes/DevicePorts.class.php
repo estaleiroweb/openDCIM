@@ -129,8 +129,12 @@ class DevicePorts {
 		
 		$this->MakeSafe();
 
+        $ConnectorID=$this->ConnectorID==''?'NULL':$this->ConnectorID;
+        $ProtocolID=$this->ProtocolID==''?'NULL':$this->ProtocolID;
+        $RateID=$this->RateID==''?'NULL':$this->RateID;
+
 		$sql="INSERT INTO fac_Ports SET DeviceID=$this->DeviceID, PortNumber=$this->PortNumber, 
-			Label=\"$this->Label\", ConnectorID=$this->ConnectorID, ProtocolID=$this->ProtocolID, RateID=$this->RateID,
+			Label=\"$this->Label\", ConnectorID=$ConnectorID, ProtocolID=$ProtocolID, RateID=$RateID,
 			MediaID=$this->MediaID, ColorID=$this->ColorID, 
 			ConnectedDeviceID=$this->ConnectedDeviceID, ConnectedPort=$this->ConnectedPort, 
 			Notes=\"$this->Notes\"";
@@ -139,7 +143,7 @@ class DevicePorts {
 			$sql .= " ON DUPLICATE KEY UPDATE PortNumber=$this->PortNumber";
 		}
 
-			print ("<pre>SQL: $sql</pre>");
+			// print ("<pre>SQL: $sql</pre>");
 		if(!$dbh->query($sql)){
 			$info=$dbh->errorInfo();
 
