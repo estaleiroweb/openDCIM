@@ -129,15 +129,21 @@ class DevicePorts {
 		
 		$this->MakeSafe();
 
-        $ConnectorID=$this->ConnectorID==''?'NULL':$this->ConnectorID;
-        $ProtocolID=$this->ProtocolID==''?'NULL':$this->ProtocolID;
-        $RateID=$this->RateID==''?'NULL':$this->RateID;
+        $ConnectorID=$this->ConnectorID==''?'NULL':(int)$this->ConnectorID;
+        $ProtocolID=$this->ProtocolID==''?'NULL':(int)$this->ProtocolID;
+        $MediaID=$this->MediaID==''?'NULL':(int)$this->MediaID;
+        $RateID=$this->RateID==''?'NULL':(int)$this->RateID;
+        $ColorID=$this->ColorID==''?'NULL':(int)$this->ColorID;
+        $ConnectedDeviceID=$this->ConnectedDeviceID==''?'NULL':(int)$this->ConnectedDeviceID;
+        $ConnectedPort=$this->ConnectedPort==''?'NULL':(int)$this->ConnectedPort;
 
-		$sql="INSERT INTO fac_Ports SET DeviceID=$this->DeviceID, PortNumber=$this->PortNumber, 
-			Label=\"$this->Label\", ConnectorID=$ConnectorID, ProtocolID=$ProtocolID, RateID=$RateID,
-			MediaID=$this->MediaID, ColorID=$this->ColorID, 
-			ConnectedDeviceID=$this->ConnectedDeviceID, ConnectedPort=$this->ConnectedPort, 
-			Notes=\"$this->Notes\"";
+		$sql="INSERT INTO fac_Ports SET 
+            DeviceID=$this->DeviceID, PortNumber=$this->PortNumber, 
+            Label=\"$this->Label\", 
+            ConnectorID=$ConnectorID, ProtocolID=$ProtocolID, RateID=$RateID,
+            MediaID=$MediaID, ColorID=$ColorID, 
+            ConnectedDeviceID=$ConnectedDeviceID, ConnectedPort=$ConnectedPort, 
+            Notes=\"$this->Notes\"";
 
 		if ( $update_existing ) {
 			$sql .= " ON DUPLICATE KEY UPDATE PortNumber=$this->PortNumber";
