@@ -230,7 +230,7 @@ echo '<div class="main">
   </div>
   <div>
     <div>',__("SiteId"),'</div>
-    <div><pre>',print_r($dc,true),'</pre></div>
+    <div>','**Construindo informação**','</pre></div>
   </div>
   <div>
     <div>',__("Administrator"),'</div>
