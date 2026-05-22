@@ -1481,3 +1481,12 @@ p.errormsg {padding: 20px; background-color: #DDDDDD; font-size: 120%; font-weig
 
 
 
+.show_hide_statistics{
+    cursor: pointer;
+    /*position: absolute;
+    right: 200px;
+    border: 1px solid #000!important;
+    border-radius: 3px;
+    background-color: #eee;*/
+}
+

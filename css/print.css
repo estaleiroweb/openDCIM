@@ -41,7 +41,3 @@ div.main .center {
 .device div.left {
 	display: block;
 }
-
-.show_hide_statistics{
-    cursor: pointer;
-}
