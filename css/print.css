@@ -42,4 +42,6 @@ div.main .center {
 	display: block;
 }
 
-
+.show_hide_statistics{
+    cursor: pointer;
+}
