@@ -211,7 +211,6 @@ echo '<div class="main">
   <div>
 	<div>',sprintf(__("Total U")." %5d",$dcStats["TotalU"]),'</div>
 	<div align="right">',sprintf("%s",number_format($dcStats["Infrastructure"])),'</div>
-    <div align="right">xpto</div>
 	<div align="right">',sprintf("%s",number_format($dcStats["Occupied"])),'</div>
 	<div align="right">',sprintf("%s",number_format($dcStats["Allocated"])),'</div>
 	<div align="right">',sprintf("%s",number_format($dcStats["Available"])),'</div>
@@ -228,6 +227,10 @@ echo '<div class="main">
   <div>
     <div>',__("Delivery Address"),'</div>
     <div>',$dc->DeliveryAddress,'</div>
+  </div>
+  <div>
+    <div>',__("SiteId"),'</div>
+    <div><pre>',print_r($dc,true),'</pre></div>
   </div>
   <div>
     <div>',__("Administrator"),'</div>
